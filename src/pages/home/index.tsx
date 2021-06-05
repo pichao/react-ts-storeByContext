@@ -38,7 +38,7 @@ export default (props: HelloWorldProps) => {
         console.log(formData);
     };
 
-    const [isFetching, res] = useRequest(
+    const [isFetching, res, getData] = useRequest(
         {
             method: 'get',
             url: '/api/v2/all',
@@ -90,6 +90,7 @@ export default (props: HelloWorldProps) => {
             <button onClick={submit}>测试</button>
             <button
                 onClick={() => {
+                    getData();
                     dispatch({
                         type: 'test_state',
                         payload: {

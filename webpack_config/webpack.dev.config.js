@@ -2,9 +2,6 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const commenConfigFunc = require('./webpack.common.config.js');
 
 module.exports = (env, argv) => {
-    console.log(env, 'env');
-    console.log(argv, 'argv');
-    console.log(commenConfigFunc(env, argv), 'oooooooo');
     const commenConfig = commenConfigFunc(env, argv);
     return {
         ...commenConfig,
